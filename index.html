@@ -204,6 +204,26 @@ footer details summary{cursor:pointer;color:var(--ink);font-weight:500;min-heigh
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* packing */
+.pack-bar{height:6px;background:var(--surface-2);margin:0 22px;border-radius:999px;overflow:hidden;margin-top:14px}
+.pack-bar i{display:block;height:100%;background:var(--c-shop);border-radius:999px;transition:width .3s}
+.pack-group{padding:14px 22px 4px}
+.pack-group h3{margin:0 0 6px;font-size:13px;font-weight:600;color:var(--ice);letter-spacing:.04em}
+.pack-list{list-style:none;margin:0;padding:0;display:grid}
+.pack-list .pk{display:flex;align-items:center;gap:12px;min-height:44px;padding:6px 2px;border-bottom:1px solid var(--line);cursor:pointer;font-size:15px;color:var(--ink)}
+.pack-list li:last-child .pk{border-bottom:0}
+.pack-list .pk input{width:22px;height:22px;flex:none;accent-color:var(--c-shop);margin:0;padding:0;border:0;cursor:pointer}
+.pk span{min-width:0;overflow-wrap:anywhere}
+.pack-list .pk.done span{color:var(--muted);text-decoration:line-through}
+.pack-card .daynav{margin-top:12px}
+.ed-pg{display:grid;gap:8px;border-bottom:1px dashed var(--line);padding-bottom:14px}
+.pe-item{display:flex;gap:6px;align-items:center;padding:3px 0}
+.pe-item input{flex:1}
+.mini{font:inherit;min-width:40px;min-height:40px;border-radius:8px;border:1px solid var(--warn-soft);background:var(--warn-soft);color:var(--warn);cursor:pointer}
+.ed-pg .ed-actions .danger{margin-left:auto}
+@media (max-width:520px){.pack-group{padding:12px 14px 2px}.pack-bar{margin-inline:14px}}
+
 /* editor */
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;max-width:calc(100% - 32px);background:var(--ink);color:var(--surface);font-size:13.5px;padding:10px 16px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
 .editbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));pointer-events:none}
@@ -273,7 +293,7 @@ ol.ed-stops{list-style:none;margin:0;padding:12px 22px;display:grid;gap:12px}
     </details>
   </div>
 </footer>
-<script type="application/json" id="trip-data">{"days": [{"id": "d1224", "m": "12", "d": "24", "w": "목", "title": "입국 · 크리스마스", "stay": "APA 호텔 삿포로 오도리에키마에미나미", "stops": [{"t": "08:00–12:00", "c": "move", "n": "출국 준비·공항 이동"}, {"t": "13:00–15:45", "c": "fix", "n": "항공 13:00 출발", "s": "15:45 신치토세 도착", "f": "ok"}, {"t": "16:00–17:00", "c": "move", "n": "입국 수속·수하물 수령", "s": "국제선은 30분~1시간 걸릴 수 있어요"}, {"t": "17:00–18:00", "c": "move", "n": "삿포로 이동·호텔 체크인", "s": "18:00 체크인 목표 · 짐만 두고 바로 나가기", "go": [["신치토세공항역 → 삿포로역 · JR 쾌속 에어포트 (약 37분)", "1,230엔"], ["삿포로역 → 오도리역 · 지하철 난보쿠선 1정거장 → 1번 출구 도보 7분", "210엔"]], "info": {"a": "中央区南2条西7丁目"}}, {"t": "18:00–19:30", "c": "shop", "n": "크리스마스 마켓", "s": "먹거리·소품 구경 · 저녁도 마켓 먹거리로", "go": [["호텔 → 오도리공원 2초메 도보 약 10분", "도보"]], "info": {"h": "11:00–21:00 (L.O. 20:45) · 12/25까지", "a": "오도리공원 1·2초메 (中央区大通西2丁目)"}}, {"t": "19:30–20:30", "c": "illum", "n": "① 오도리공원 화이트 일루미네이션", "info": {"h": "16:30–22:00, 12/23~25는 24:00까지", "a": "오도리공원 (中央区大通西)"}}, {"t": "20:30–21:30", "c": "meal", "n": "부족하면 간단한 야식", "s": "호텔 근처 세이코마트 핫셰프"}, {"t": "", "c": "move", "n": "호텔 복귀", "go": [["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분", "도보"]]}, {"t": "21:30", "c": "rest", "n": "휴식"}], "brief": "13:00 출국 → 15:45 신치토세 → 18:00 호텔 체크인 → 크리스마스 마켓·오도리 일루미"}, {"id": "d1225", "m": "12", "d": "25", "w": "금", "title": "조잔케이 · 온천", "stay": "그랜드 브리센 호텔 조잔케이", "stops": [{"t": "08:00–09:30", "c": "move", "n": "아침·1박 짐 챙기기", "s": "큰 짐은 호텔 객실에 두고 출발"}, {"t": "09:30–10:30", "c": "move", "n": "호텔 → 삿포로역", "go": [["호텔 → 삿포로역 도보 약 25분 · 또는 오도리역 → 삿포로역 지하철 난보쿠선 1정거장", "도보 / 210엔"]]}, {"t": "10:30–11:30", "c": "meal", "n": "역 주변 이른 점심"}, {"t": "11:30–12:15", "c": "cafe", "n": "키노토야 다이마루점", "s": "디저트·휴식", "info": {"h": "10:00–20:00", "a": "中央区北5条西4 大丸札幌店 B1"}}, {"t": "12:15–13:00", "c": "move", "n": "북쪽 출구 단체버스 정류장", "s": "12:40 도착 목표"}, {"t": "13:00–14:30", "c": "fix", "n": "송영버스 삿포로역 → 조잔케이", "s": "도착 시각은 교통에 따라 변동", "f": "ok", "go": [["그랜드 브리센 무료 송영버스 · 전날 17:00까지 예약제", "무료"]]}, {"t": "14:30–17:00", "c": "rest", "n": "호텔 체크인·온천", "info": {"a": "南区定山渓温泉東4-328"}}, {"t": "", "c": "cafe", "n": "온천 거리·J.glacee", "s": "카페는 도착·영업시간에 따라", "f": "opt", "info": {"h": "9:00–18:00 · 부정기 휴무", "a": "南区定山渓温泉西4丁目356"}}, {"t": "17:00–20:00", "c": "meal", "n": "호텔 석식·온천", "s": "식사 시간은 숙소 안내 기준"}, {"t": "20:00", "c": "rest", "n": "숙소에서 휴식"}], "brief": "삿포로역 점심·키노토야 → 13:00 송영버스 → 온천·석식 (그랜드 브리센 1박)"}, {"id": "d1226", "m": "12", "d": "26", "w": "토", "title": "역 주변 쇼핑 · 빛 산책", "stay": "APA 호텔 삿포로 오도리에키마에미나미", "stops": [{"t": "08:00–10:30", "c": "rest", "n": "조식·온천·체크아웃", "s": "10:45 버스 탑승 준비"}, {"t": "10:45–11:45", "c": "fix", "n": "송영버스 조잔케이 → 삿포로역", "s": "10:45경 출발, 11:45경 도착", "f": "ok", "go": [["그랜드 브리센 무료 송영버스 · 전날 17:00까지 예약제", "무료"]]}, {"t": "12:00–13:00", "c": "meal", "n": "역 주변 점심"}, {"t": "13:00–15:30", "c": "shop", "n": "쇼핑 DAY 1 · 삿포로 도큐백화점", "s": "빅카메라 5·6층, 유니클로·GU 7층이 한 건물에 있어요", "go": [["삿포로역 남쪽 출구에서 도보 약 3분", "도보"]], "info": {"h": "10:00–20:00 (빅카메라 동일)", "a": "中央区北4条西2-1 さっぽろ東急百貨店"}}, {"t": "15:30–16:30", "c": "shop", "n": "다이마루 백화점", "s": "백화점 구경·실내 휴식", "info": {"h": "10:00–20:00", "a": "中央区北5条西4 大丸札幌店"}}, {"t": "16:30–18:00", "c": "illum", "n": "② 아카푸라 → ③ 에키마에도리 → ④ 삿포로역 남쪽 광장", "s": "아카렌가 청사 외관·사진", "info": {"h": "에키마에도리 2/11까지, 아카푸라·남쪽 광장 3/14까지 점등"}}, {"t": "18:00–19:00", "c": "move", "n": "스스키노 이동", "go": [["삿포로역 → 스스키노역 · 지하철 난보쿠선 2정거장 (또는 도보 약 30분)", "210엔"]]}, {"t": "19:00–20:30", "c": "meal", "n": "신나루 본즈 스스키노 본점", "s": "생램 징기스칸 · 예약 추천", "info": {"h": "저녁 17:00–23:30 (예약 17:00–21:00) · 주말 점심 12:00–15:00", "a": "中央区南4条西4丁目2 4ビル 1F"}}, {"t": "20:30", "c": "rest", "n": "호텔 복귀·휴식", "go": [["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분", "도보"]]}], "brief": "10:45 송영버스 → 도큐백화점(빅카메라·유니클로·GU)·다이마루 → 아카푸라·에키마에 일루미 → 신나루 본즈 징기스칸"}, {"id": "d1227", "m": "12", "d": "27", "w": "일", "title": "비에이 겨울 투어", "stay": "APA 호텔 삿포로 오도리에키마에미나미", "note": "날씨로 취소되면 12/30을 대체일로 고려. 집결지가 삿포로역 부근이면 호텔에서 도보 약 25분이에요.", "stops": [{"t": "08:00–20:00", "c": "fix", "n": "비에이 종일 투어", "s": "집결·귀환 시각은 예약 상품 일정에 맞춰 조정", "f": "opt", "go": [["호텔 → 삿포로역 도보 약 25분 · 또는 오도리역 → 삿포로역 지하철 난보쿠선 1정거장", "도보 / 210엔"]]}, {"t": "", "c": "fix", "n": "흰수염폭포·청의호수 등", "s": "실제 방문지는 상품 코스 기준"}, {"t": "20:00–21:30", "c": "meal", "n": "귀환 후 가까운 곳에서 저녁"}, {"t": "21:30", "c": "rest", "n": "호텔 복귀·휴식", "go": [["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분", "도보"]]}], "brief": "종일 투어(흰수염폭포·청의호수 등) → 귀환 후 저녁 · 날씨로 취소되면 12/30과 교체"}, {"id": "d1228", "m": "12", "d": "28", "w": "월", "title": "오타루 당일 여행", "stay": "APA 호텔 삿포로 오도리에키마에미나미", "stops": [{"t": "08:00–09:00", "c": "move", "n": "아침·외출 준비"}, {"t": "09:00–11:00", "c": "move", "n": "호텔 → 삿포로역 → 오타루", "s": "환승·이동 여유 포함", "go": [["호텔 → 삿포로역 도보 약 25분 · 또는 오도리역 → 삿포로역 지하철 난보쿠선 1정거장", "도보 / 210엔"], ["삿포로역 → 오타루역 · JR 쾌속 에어포트 (32~36분) 또는 보통 (50~60분)", "800엔"]]}, {"t": "11:00–12:00", "c": "meal", "n": "카이센동 점심 · 오타루 산카쿠 시장", "s": "역 바로 옆 해산물 시장 · 가게마다 영업시간이 달라요", "go": [["오타루역에서 도보 1분", "도보"]], "info": {"h": "시장 6:00–17:00 · 식당 7:00–17:00 · 연중무휴", "a": "小樽市稲穂3丁目10-16"}}, {"t": "12:00–12:30", "c": "move", "n": "오타루 수족관으로 이동", "go": [["오타루역 → 수족관 · 택시 약 20~30분 (겨울 할증 약 20%)", "약 2,000~2,500엔"]]}, {"t": "12:30–14:30", "c": "sight", "n": "오타루 수족관", "s": "겨울엔 해수공원·유원지는 휴장", "info": {"h": "겨울 10:00–16:00 (최종 입장 15:30) · 2026.12.12~2027.2.23", "a": "小樽市祝津3丁目303", "x": "입장료 성인 1,300엔 (2025~26 겨울 기준)"}}, {"t": "14:30–15:00", "c": "move", "n": "사카이마치로 이동", "go": [["수족관 → 사카이마치 · 택시 약 20~30분", "약 2,000~2,500엔"]], "s": "수족관 앞에서 잘 안 잡히면 매표소에 택시 호출 부탁"}, {"t": "15:00–16:00", "c": "shop", "n": "사카이마치 거리", "s": "유리공예·오르골당 주변"}, {"t": "16:00–16:45", "c": "cafe", "n": "기타이치홀", "s": "램프 카페에서 휴식", "f": "opt", "info": {"h": "9:00–17:30 (L.O. 17:00)", "a": "小樽市堺町7-26 北一硝子三号館"}}, {"t": "16:45–17:30", "c": "illum", "n": "오타루 운하", "s": "해 진 뒤 가스등 야경", "go": [["사카이마치에서 도보 약 10분, 운하에서 오타루역까지 도보 10~12분", "무료"]]}, {"t": "17:30–19:00", "c": "move", "n": "삿포로 복귀", "go": [["오타루역 → 삿포로역 · JR", "800엔"], ["삿포로역 → 호텔 도보 약 25분 · 또는 지하철로 오도리역 (210엔) + 도보 7분", "도보 / 210엔"]]}, {"t": "19:00–20:00", "c": "meal", "n": "저녁 식사"}, {"t": "20:00", "c": "rest", "n": "호텔 복귀·휴식", "go": [["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분", "도보"]]}], "brief": "JR로 오타루 → 산카쿠 시장 카이센동 → 택시로 오타루 수족관 → 사카이마치·기타이치홀 → 운하 야경 → 삿포로 저녁"}, {"id": "d1229", "m": "12", "d": "29", "w": "화", "title": "스스키노 촬영 · 기념 저녁", "stay": "APA 호텔 삿포로 오도리에키마에미나미", "stops": [{"t": "08:00–12:00", "c": "move", "n": "헤어·촬영 준비", "s": "오전 관광 일정은 비워두기"}, {"t": "12:00–13:00", "c": "meal", "n": "스스키노 주변 가벼운 점심", "go": [["오도리·스스키노·타누키코지까지 도보 7~10분", "도보"]]}, {"t": "13:00–14:00", "c": "move", "n": "촬영 장소 이동", "s": "13:40 도착 목표"}, {"t": "14:00–15:00", "c": "fix", "n": "Susukino 촬영 1시간", "s": "14:00 – 15:00", "f": "ok"}, {"t": "15:00–16:30", "c": "cafe", "f": "must", "n": "Majisand (마지산도)", "s": "과일 샌드·디저트·휴식", "info": {"h": "11:00–20:00 · 연중무휴 (품절 시 조기 마감)", "a": "中央区南2条西1丁目5-9 第13広和ビル 1F"}}, {"t": "16:30–17:15", "c": "illum", "n": "⑤ 미나미이치조도리 화이트 일루미네이션", "info": {"h": "3/14까지 점등"}}, {"t": "17:30–19:00", "c": "meal", "n": "우시토사카나 타누키코지", "s": "와규·해산물 기념 저녁 · 17:30 예약 추천", "info": {"h": "11:30–14:30 / 17:00–22:00 (주말 23:00까지)", "a": "中央区南3条西5丁目30 三条美松ビル B1", "x": "예약 전화 011-522-5980"}}, {"t": "19:00", "c": "rest", "n": "호텔 복귀·휴식", "go": [["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분", "도보"]]}], "brief": "오전 준비 → 14:00 촬영 → Majisand → 미나미이치조 일루미 → 17:30 우시토사카나"}, {"id": "d1230", "m": "12", "d": "30", "w": "수", "title": "휴식 · 오도리 쇼핑", "stay": "APA 호텔 삿포로 오도리에키마에미나미", "note": "비에이 투어가 취소되면 이날 일정 조정", "stops": [{"t": "08:00–10:00", "c": "rest", "n": "늦잠·휴식"}, {"t": "10:00–11:30", "c": "move", "n": "시내 이동", "go": [["오도리·스스키노·타누키코지까지 도보 7~10분", "도보"]]}, {"t": "11:30–12:30", "c": "meal", "n": "수프카레 TREASURE", "s": "대기시간에 따라 뒤 일정 조정", "info": {"h": "11:30–15:30 / 17:00–21:00 · 부정기 휴무", "a": "中央区南2条西1-8-2 アスカビル 1F"}}, {"t": "12:30–14:30", "c": "shop", "n": "쇼핑 DAY 2 · 미쓰코시 백화점", "s": "백화점 + 유니클로·GU 미쓰코시점", "go": [["TREASURE에서 도보 약 5분", "도보"]], "info": {"h": "10:00–19:00 (지하 식품관 19:30)", "a": "中央区南1条西3丁目8 札幌三越"}}, {"t": "14:30–15:30", "c": "shop", "n": "Standard Products 모유크삿포로점", "s": "다이소의 생활용품 브랜드", "go": [["미쓰코시에서 도보 약 3분", "도보"]], "info": {"h": "10:00–20:00", "a": "中央区南2条西3丁目20 moyuk SAPPORO 2F"}}, {"t": "15:30–16:15", "c": "cafe", "n": "키노토야 BAKE 폴타운점", "s": "디저트·휴식", "info": {"h": "10:00–20:00 · 무휴", "a": "中央区南2条西3丁目 지하상가 폴타운"}}, {"t": "16:15–17:30", "c": "shop", "n": "마트 장보기 · 다이이치 스스키노점", "s": "홋카이도 지역 슈퍼 · KANIZA까지 도보 약 3분", "info": {"h": "10:00–21:00", "a": "中央区南4条西4丁目1-1 COCONO SUSUKINO B2F"}}, {"t": "18:00–20:00", "c": "meal", "n": "KANIZA 삿포로 (かに食べ放題 蟹座)", "s": "게 샤부샤부 무한리필 · 18:00 예약 추천", "f": "must", "info": {"h": "17:00–22:30 (L.O. 21:00)", "a": "中央区南4条西2丁目10-6 南4西2ビル 9F"}}, {"t": "20:00", "c": "rest", "n": "호텔 복귀·쇼핑 짐 정리", "go": [["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분", "도보"]]}], "brief": "TREASURE 수프카레 → 미쓰코시 백화점 → Standard Products → 키노토야 BAKE → 다이이치 마트 → 18:00 KANIZA"}, {"id": "d1231", "m": "12", "d": "31", "w": "목", "title": "휴식 · 카운트다운", "stay": "APA 호텔 삿포로 오도리에키마에미나미", "stops": [{"t": "08:00–11:00", "c": "rest", "n": "늦잠·아침·휴식"}, {"t": "11:00–14:00", "c": "meal", "n": "시내 이동·라멘 점심", "s": "하루카 / 소라 중 연말 영업이 확인되는 곳", "go": [["오도리·스스키노·타누키코지까지 도보 7~10분", "도보"]], "info": {"h": "하루카(悠): 11:00–15:00 / 17:00–23:00 · 부정기 휴무", "a": "中央区南5条西3-6 N・グランデビル 1F (원조 라멘 요코초)", "w": "소라(空) 본점은 2024년 1월 화재로 영업하지 않아요. 남은 곳은 신치토세공항점뿐이에요."}}, {"t": "14:00–19:00", "c": "rest", "n": "숙소 휴식·귀국 짐 정리", "s": "관광·쇼핑은 추가하지 않기"}, {"t": "19:00–21:00", "c": "meal", "n": "시내 이동·저녁 식사"}, {"t": "21:00–23:00", "c": "rest", "n": "따뜻한 실내에서 휴식", "s": "23:30쯤 TV타워 쪽으로 이동"}, {"t": "23:30–00:05", "c": "illum", "n": "삿포로 TV타워 카운트다운", "s": "오도리공원 서쪽(니시 2~3초메)에서 TV타워 전광시계를 보며 새해맞이", "f": "tbd", "go": [["호텔 → TV타워 도보 약 15분", "도보"]], "info": {"a": "中央区大通西1丁目", "x": "2025년 12/31에 처음으로 전광시계 카운트다운을 했어요. 전망대는 밤에 닫으니 밖에서 보는 걸로", "w": "2026년에도 하는지는 아직 발표 전이에요. 12월에 TV타워 공식 계정 확인 필요"}}, {"t": "00:15–00:45", "c": "sight", "n": "미요시 신사 첫 참배·오미쿠지", "s": "호텔에서 걸어서 3분 거리 동네 신사 · 오미쿠지 100엔", "go": [["TV타워 → 미요시 신사 도보 약 15분", "도보"]], "info": {"h": "경내는 24시간 참배 가능 · 사무소 9:00–17:00", "a": "中央区南1条西8丁目17", "x": "1878년 아키타 출신 이주민이 세운 신사 · 오나무치·스쿠나히코나·미요시 신 등을 모셔요"}}, {"t": "", "c": "rest", "n": "호텔 복귀", "go": [["미요시 신사 → 호텔 도보 약 3분", "도보"]]}], "brief": "하루카 라멘 → 숙소 휴식·짐 정리 → 저녁 → TV타워 카운트다운 → 미요시 신사 첫 참배"}, {"id": "d0101", "m": "1", "d": "1", "w": "금", "title": "공항 · 귀국", "stay": "한국 도착", "stayLabel": "Home", "stops": [{"t": "08:00–10:15", "c": "move", "n": "체크아웃·공항 이동", "s": "교통편에 맞춰 출발 시각 확정", "go": [["호텔 → 오도리역 도보 7분 → 지하철 난보쿠선 삿포로역", "210엔"], ["삿포로역 → 신치토세공항 · JR 쾌속 에어포트 (약 37분)", "1,230엔"]]}, {"t": "10:15–12:00", "c": "move", "n": "공항 도착 10:15~10:30 목표", "s": "면세 반출 확인·항공 수속 · 수하물 위탁 전 물품 검사 확인"}, {"t": "12:00–14:00", "c": "meal", "n": "수속 진행에 맞춰 식사·쇼핑", "s": "이후 보안검색·출국심사·탑승 준비"}, {"t": "14:15–17:30", "c": "fix", "n": "항공 14:15 출발", "s": "17:30 한국 도착", "f": "ok"}, {"t": "17:30", "c": "rest", "n": "귀가·휴식"}], "brief": "10:15 공항 도착 → 수속·쇼핑 → 14:15 출발 → 17:30 한국 도착"}]}</script>
+<script type="application/json" id="trip-data">{"days":[{"id":"d1224","m":"12","d":"24","w":"목","title":"입국 · 크리스마스","stay":"APA 호텔 삿포로 오도리에키마에미나미","stops":[{"t":"08:00–12:00","c":"move","n":"출국 준비·공항 이동"},{"t":"13:00–15:45","c":"fix","n":"항공 13:00 출발","s":"15:45 신치토세 도착","f":"ok"},{"t":"16:00–17:00","c":"move","n":"입국 수속·수하물 수령","s":"국제선은 30분~1시간 걸릴 수 있어요"},{"t":"17:00–18:00","c":"move","n":"삿포로 이동·호텔 체크인","s":"18:00 체크인 목표 · 짐만 두고 바로 나가기","go":[["신치토세공항역 → 삿포로역 · JR 쾌속 에어포트 (약 37분)","1,230엔"],["삿포로역 → 오도리역 · 지하철 난보쿠선 1정거장 → 1번 출구 도보 7분","210엔"]],"info":{"a":"中央区南2条西7丁目"}},{"t":"18:00–19:30","c":"shop","n":"크리스마스 마켓","s":"먹거리·소품 구경 · 저녁도 마켓 먹거리로","go":[["호텔 → 오도리공원 2초메 도보 약 10분","도보"]],"info":{"h":"11:00–21:00 (L.O. 20:45) · 12/25까지","a":"오도리공원 1·2초메 (中央区大通西2丁目)"}},{"t":"19:30–20:30","c":"illum","n":"① 오도리공원 화이트 일루미네이션","info":{"h":"16:30–22:00, 12/23~25는 24:00까지","a":"오도리공원 (中央区大通西)"}},{"t":"20:30–21:30","c":"meal","n":"부족하면 간단한 야식","s":"호텔 근처 세이코마트 핫셰프"},{"t":"","c":"move","n":"호텔 복귀","go":[["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분","도보"]]},{"t":"21:30","c":"rest","n":"휴식"}],"brief":"13:00 출국 → 15:45 신치토세 → 18:00 호텔 체크인 → 크리스마스 마켓·오도리 일루미"},{"id":"d1225","m":"12","d":"25","w":"금","title":"조잔케이 · 온천","stay":"그랜드 브리센 호텔 조잔케이","stops":[{"t":"08:00–09:30","c":"move","n":"아침·1박 짐 챙기기","s":"큰 짐은 호텔 객실에 두고 출발"},{"t":"09:30–10:30","c":"move","n":"호텔 → 삿포로역","go":[["호텔 → 삿포로역 도보 약 25분 · 또는 오도리역 → 삿포로역 지하철 난보쿠선 1정거장","도보 / 210엔"]]},{"t":"10:30–11:30","c":"meal","n":"역 주변 이른 점심"},{"t":"11:30–12:15","c":"cafe","n":"키노토야 다이마루점","s":"디저트·휴식","info":{"h":"10:00–20:00","a":"中央区北5条西4 大丸札幌店 B1"}},{"t":"12:15–13:00","c":"move","n":"북쪽 출구 단체버스 정류장","s":"12:40 도착 목표"},{"t":"13:00–14:30","c":"fix","n":"송영버스 삿포로역 → 조잔케이","s":"도착 시각은 교통에 따라 변동","f":"ok","go":[["그랜드 브리센 무료 송영버스 · 전날 17:00까지 예약제","무료"]]},{"t":"14:30–17:00","c":"rest","n":"호텔 체크인·온천","info":{"a":"南区定山渓温泉東4-328"}},{"t":"","c":"cafe","n":"온천 거리·J.glacee","s":"카페는 도착·영업시간에 따라","f":"opt","info":{"h":"9:00–18:00 · 부정기 휴무","a":"南区定山渓温泉西4丁目356"}},{"t":"17:00–20:00","c":"meal","n":"호텔 석식·온천","s":"식사 시간은 숙소 안내 기준"},{"t":"20:00","c":"rest","n":"숙소에서 휴식"}],"brief":"삿포로역 점심·키노토야 → 13:00 송영버스 → 온천·석식 (그랜드 브리센 1박)"},{"id":"d1226","m":"12","d":"26","w":"토","title":"역 주변 쇼핑 · 빛 산책","stay":"APA 호텔 삿포로 오도리에키마에미나미","stops":[{"t":"08:00–10:30","c":"rest","n":"조식·온천·체크아웃","s":"10:45 버스 탑승 준비"},{"t":"10:45–11:45","c":"fix","n":"송영버스 조잔케이 → 삿포로역","s":"10:45경 출발, 11:45경 도착","f":"ok","go":[["그랜드 브리센 무료 송영버스 · 전날 17:00까지 예약제","무료"]]},{"t":"12:00–13:00","c":"meal","n":"역 주변 점심"},{"t":"13:00–15:30","c":"shop","n":"쇼핑 DAY 1 · 삿포로 도큐백화점","s":"빅카메라 5·6층, 유니클로·GU 7층이 한 건물에 있어요","go":[["삿포로역 남쪽 출구에서 도보 약 3분","도보"]],"info":{"h":"10:00–20:00 (빅카메라 동일)","a":"中央区北4条西2-1 さっぽろ東急百貨店"}},{"t":"15:30–16:30","c":"shop","n":"다이마루 백화점","s":"백화점 구경·실내 휴식","info":{"h":"10:00–20:00","a":"中央区北5条西4 大丸札幌店"}},{"t":"16:30–18:00","c":"illum","n":"② 아카푸라 → ③ 에키마에도리 → ④ 삿포로역 남쪽 광장","s":"아카렌가 청사 외관·사진","info":{"h":"에키마에도리 2/11까지, 아카푸라·남쪽 광장 3/14까지 점등"}},{"t":"18:00–19:00","c":"move","n":"스스키노 이동","go":[["삿포로역 → 스스키노역 · 지하철 난보쿠선 2정거장 (또는 도보 약 30분)","210엔"]]},{"t":"19:00–20:30","c":"meal","n":"신나루 본즈 스스키노 본점","s":"생램 징기스칸 · 예약 추천","info":{"h":"저녁 17:00–23:30 (예약 17:00–21:00) · 주말 점심 12:00–15:00","a":"中央区南4条西4丁目2 4ビル 1F"}},{"t":"20:30","c":"rest","n":"호텔 복귀·휴식","go":[["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분","도보"]]}],"brief":"10:45 송영버스 → 도큐백화점(빅카메라·유니클로·GU)·다이마루 → 아카푸라·에키마에 일루미 → 신나루 본즈 징기스칸"},{"id":"d1227","m":"12","d":"27","w":"일","title":"비에이 겨울 투어","stay":"APA 호텔 삿포로 오도리에키마에미나미","note":"날씨로 취소되면 12/30을 대체일로 고려. 집결지가 삿포로역 부근이면 호텔에서 도보 약 25분이에요.","stops":[{"t":"08:00–20:00","c":"fix","n":"비에이 종일 투어","s":"집결·귀환 시각은 예약 상품 일정에 맞춰 조정","f":"opt","go":[["호텔 → 삿포로역 도보 약 25분 · 또는 오도리역 → 삿포로역 지하철 난보쿠선 1정거장","도보 / 210엔"]]},{"t":"","c":"fix","n":"흰수염폭포·청의호수 등","s":"실제 방문지는 상품 코스 기준"},{"t":"20:00–21:30","c":"meal","n":"귀환 후 가까운 곳에서 저녁"},{"t":"21:30","c":"rest","n":"호텔 복귀·휴식","go":[["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분","도보"]]}],"brief":"종일 투어(흰수염폭포·청의호수 등) → 귀환 후 저녁 · 날씨로 취소되면 12/30과 교체"},{"id":"d1228","m":"12","d":"28","w":"월","title":"오타루 당일 여행","stay":"APA 호텔 삿포로 오도리에키마에미나미","stops":[{"t":"08:00–09:00","c":"move","n":"아침·외출 준비"},{"t":"09:00–11:00","c":"move","n":"호텔 → 삿포로역 → 오타루","s":"환승·이동 여유 포함","go":[["호텔 → 삿포로역 도보 약 25분 · 또는 오도리역 → 삿포로역 지하철 난보쿠선 1정거장","도보 / 210엔"],["삿포로역 → 오타루역 · JR 쾌속 에어포트 (32~36분) 또는 보통 (50~60분)","800엔"]]},{"t":"11:00–12:00","c":"meal","n":"카이센동 점심 · 오타루 산카쿠 시장","s":"역 바로 옆 해산물 시장 · 가게마다 영업시간이 달라요","go":[["오타루역에서 도보 1분","도보"]],"info":{"h":"시장 6:00–17:00 · 식당 7:00–17:00 · 연중무휴","a":"小樽市稲穂3丁目10-16"}},{"t":"12:00–12:30","c":"move","n":"오타루 수족관으로 이동","go":[["오타루역 → 수족관 · 택시 약 20~30분 (겨울 할증 약 20%)","약 2,000~2,500엔"]]},{"t":"12:30–14:30","c":"sight","n":"오타루 수족관","s":"겨울엔 해수공원·유원지는 휴장","info":{"h":"겨울 10:00–16:00 (최종 입장 15:30) · 2026.12.12~2027.2.23","a":"小樽市祝津3丁目303","x":"입장료 성인 1,300엔 (2025~26 겨울 기준)"}},{"t":"14:30–15:00","c":"move","n":"사카이마치로 이동","go":[["수족관 → 사카이마치 · 택시 약 20~30분","약 2,000~2,500엔"]],"s":"수족관 앞에서 잘 안 잡히면 매표소에 택시 호출 부탁"},{"t":"15:00–16:00","c":"shop","n":"사카이마치 거리","s":"유리공예·오르골당 주변"},{"t":"16:00–16:45","c":"cafe","n":"기타이치홀","s":"램프 카페에서 휴식","f":"opt","info":{"h":"9:00–17:30 (L.O. 17:00)","a":"小樽市堺町7-26 北一硝子三号館"}},{"t":"16:45–17:30","c":"illum","n":"오타루 운하","s":"해 진 뒤 가스등 야경","go":[["사카이마치에서 도보 약 10분, 운하에서 오타루역까지 도보 10~12분","무료"]]},{"t":"17:30–19:00","c":"move","n":"삿포로 복귀","go":[["오타루역 → 삿포로역 · JR","800엔"],["삿포로역 → 호텔 도보 약 25분 · 또는 지하철로 오도리역 (210엔) + 도보 7분","도보 / 210엔"]]},{"t":"19:00–20:00","c":"meal","n":"저녁 식사"},{"t":"20:00","c":"rest","n":"호텔 복귀·휴식","go":[["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분","도보"]]}],"brief":"JR로 오타루 → 산카쿠 시장 카이센동 → 택시로 오타루 수족관 → 사카이마치·기타이치홀 → 운하 야경 → 삿포로 저녁"},{"id":"d1229","m":"12","d":"29","w":"화","title":"스스키노 촬영 · 기념 저녁","stay":"APA 호텔 삿포로 오도리에키마에미나미","stops":[{"t":"08:00–12:00","c":"move","n":"헤어·촬영 준비","s":"오전 관광 일정은 비워두기"},{"t":"12:00–13:00","c":"meal","n":"스스키노 주변 가벼운 점심","go":[["오도리·스스키노·타누키코지까지 도보 7~10분","도보"]]},{"t":"13:00–14:00","c":"move","n":"촬영 장소 이동","s":"13:40 도착 목표"},{"t":"14:00–15:00","c":"fix","n":"Susukino 촬영 1시간","s":"14:00 – 15:00","f":"ok"},{"t":"15:00–16:30","c":"cafe","f":"must","n":"Majisand (마지산도)","s":"과일 샌드·디저트·휴식","info":{"h":"11:00–20:00 · 연중무휴 (품절 시 조기 마감)","a":"中央区南2条西1丁目5-9 第13広和ビル 1F"}},{"t":"16:30–17:15","c":"illum","n":"⑤ 미나미이치조도리 화이트 일루미네이션","info":{"h":"3/14까지 점등"}},{"t":"17:30–19:00","c":"meal","n":"우시토사카나 타누키코지","s":"와규·해산물 기념 저녁 · 17:30 예약 추천","info":{"h":"11:30–14:30 / 17:00–22:00 (주말 23:00까지)","a":"中央区南3条西5丁目30 三条美松ビル B1","x":"예약 전화 011-522-5980"}},{"t":"19:00","c":"rest","n":"호텔 복귀·휴식","go":[["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분","도보"]]}],"brief":"오전 준비 → 14:00 촬영 → Majisand → 미나미이치조 일루미 → 17:30 우시토사카나"},{"id":"d1230","m":"12","d":"30","w":"수","title":"휴식 · 오도리 쇼핑","stay":"APA 호텔 삿포로 오도리에키마에미나미","note":"비에이 투어가 취소되면 이날 일정 조정","stops":[{"t":"08:00–10:00","c":"rest","n":"늦잠·휴식"},{"t":"10:00–11:30","c":"move","n":"시내 이동","go":[["오도리·스스키노·타누키코지까지 도보 7~10분","도보"]]},{"t":"11:30–12:30","c":"meal","n":"수프카레 TREASURE","s":"대기시간에 따라 뒤 일정 조정","info":{"h":"11:30–15:30 / 17:00–21:00 · 부정기 휴무","a":"中央区南2条西1-8-2 アスカビル 1F"}},{"t":"12:30–14:30","c":"shop","n":"쇼핑 DAY 2 · 미쓰코시 백화점","s":"백화점 + 유니클로·GU 미쓰코시점","go":[["TREASURE에서 도보 약 5분","도보"]],"info":{"h":"10:00–19:00 (지하 식품관 19:30)","a":"中央区南1条西3丁目8 札幌三越"}},{"t":"14:30–15:30","c":"shop","n":"Standard Products 모유크삿포로점","s":"다이소의 생활용품 브랜드","go":[["미쓰코시에서 도보 약 3분","도보"]],"info":{"h":"10:00–20:00","a":"中央区南2条西3丁目20 moyuk SAPPORO 2F"}},{"t":"15:30–16:15","c":"cafe","n":"키노토야 BAKE 폴타운점","s":"디저트·휴식","info":{"h":"10:00–20:00 · 무휴","a":"中央区南2条西3丁目 지하상가 폴타운"}},{"t":"16:15–17:30","c":"shop","n":"마트 장보기 · 다이이치 스스키노점","s":"홋카이도 지역 슈퍼 · KANIZA까지 도보 약 3분","info":{"h":"10:00–21:00","a":"中央区南4条西4丁目1-1 COCONO SUSUKINO B2F"}},{"t":"18:00–20:00","c":"meal","n":"KANIZA 삿포로 (かに食べ放題 蟹座)","s":"게 샤부샤부 무한리필 · 18:00 예약 추천","f":"must","info":{"h":"17:00–22:30 (L.O. 21:00)","a":"中央区南4条西2丁目10-6 南4西2ビル 9F"}},{"t":"20:00","c":"rest","n":"호텔 복귀·쇼핑 짐 정리","go":[["호텔까지 도보 · 오도리에서 약 7분, 스스키노에서 약 10분","도보"]]}],"brief":"TREASURE 수프카레 → 미쓰코시 백화점 → Standard Products → 키노토야 BAKE → 다이이치 마트 → 18:00 KANIZA"},{"id":"d1231","m":"12","d":"31","w":"목","title":"휴식 · 카운트다운","stay":"APA 호텔 삿포로 오도리에키마에미나미","stops":[{"t":"08:00–11:00","c":"rest","n":"늦잠·아침·휴식"},{"t":"11:00–14:00","c":"meal","n":"시내 이동·라멘 점심","s":"하루카 / 소라 중 연말 영업이 확인되는 곳","go":[["오도리·스스키노·타누키코지까지 도보 7~10분","도보"]],"info":{"h":"하루카(悠): 11:00–15:00 / 17:00–23:00 · 부정기 휴무","a":"中央区南5条西3-6 N・グランデビル 1F (원조 라멘 요코초)","w":"소라(空) 본점은 2024년 1월 화재로 영업하지 않아요. 남은 곳은 신치토세공항점뿐이에요."}},{"t":"14:00–19:00","c":"rest","n":"숙소 휴식·귀국 짐 정리","s":"관광·쇼핑은 추가하지 않기"},{"t":"19:00–21:00","c":"meal","n":"시내 이동·저녁 식사"},{"t":"21:00–23:00","c":"rest","n":"따뜻한 실내에서 휴식","s":"23:30쯤 TV타워 쪽으로 이동"},{"t":"23:30–00:05","c":"illum","n":"삿포로 TV타워 카운트다운","s":"오도리공원 서쪽(니시 2~3초메)에서 TV타워 전광시계를 보며 새해맞이","f":"tbd","go":[["호텔 → TV타워 도보 약 15분","도보"]],"info":{"a":"中央区大通西1丁目","x":"2025년 12/31에 처음으로 전광시계 카운트다운을 했어요. 전망대는 밤에 닫으니 밖에서 보는 걸로","w":"2026년에도 하는지는 아직 발표 전이에요. 12월에 TV타워 공식 계정 확인 필요"}},{"t":"00:15–00:45","c":"sight","n":"미요시 신사 첫 참배·오미쿠지","s":"호텔에서 걸어서 3분 거리 동네 신사 · 오미쿠지 100엔","go":[["TV타워 → 미요시 신사 도보 약 15분","도보"]],"info":{"h":"경내는 24시간 참배 가능 · 사무소 9:00–17:00","a":"中央区南1条西8丁目17","x":"1878년 아키타 출신 이주민이 세운 신사 · 오나무치·스쿠나히코나·미요시 신 등을 모셔요"}},{"t":"","c":"rest","n":"호텔 복귀","go":[["미요시 신사 → 호텔 도보 약 3분","도보"]]}],"brief":"하루카 라멘 → 숙소 휴식·짐 정리 → 저녁 → TV타워 카운트다운 → 미요시 신사 첫 참배"},{"id":"d0101","m":"1","d":"1","w":"금","title":"공항 · 귀국","stay":"한국 도착","stayLabel":"Home","stops":[{"t":"08:00–10:15","c":"move","n":"체크아웃·공항 이동","s":"교통편에 맞춰 출발 시각 확정","go":[["호텔 → 오도리역 도보 7분 → 지하철 난보쿠선 삿포로역","210엔"],["삿포로역 → 신치토세공항 · JR 쾌속 에어포트 (약 37분)","1,230엔"]]},{"t":"10:15–12:00","c":"move","n":"공항 도착 10:15~10:30 목표","s":"면세 반출 확인·항공 수속 · 수하물 위탁 전 물품 검사 확인"},{"t":"12:00–14:00","c":"meal","n":"수속 진행에 맞춰 식사·쇼핑","s":"이후 보안검색·출국심사·탑승 준비"},{"t":"14:15–17:30","c":"fix","n":"항공 14:15 출발","s":"17:30 한국 도착","f":"ok"},{"t":"17:30","c":"rest","n":"귀가·휴식"}],"brief":"10:15 공항 도착 → 수속·쇼핑 → 14:15 출발 → 17:30 한국 도착"}],"packing":[{"cat":"서류·돈","items":[{"t":"여권 (만료일 6개월 이상 남았는지)","done":false},{"t":"항공권 e-티켓","done":false},{"t":"호텔 예약 확인 (APA·그랜드 브리센)","done":false},{"t":"조잔케이 송영버스 예약 확인","done":false},{"t":"비에이 투어 예약 확인","done":false},{"t":"Visit Japan Web 입국 QR","done":false},{"t":"엔화 현금","done":false},{"t":"해외결제 카드·트래블카드","done":false},{"t":"여행자 보험","done":false}]},{"cat":"전자기기","items":[{"t":"휴대폰·충전기","done":false},{"t":"보조배터리 (기내 반입만 가능)","done":false},{"t":"일본용 멀티어댑터 (A타입 돼지코)","done":false},{"t":"eSIM 또는 포켓와이파이","done":false},{"t":"카메라·메모리카드","done":false}]},{"cat":"방한","items":[{"t":"롱패딩·두꺼운 외투","done":false},{"t":"히트텍·내복","done":false},{"t":"장갑 (터치 되는 것)","done":false},{"t":"목도리","done":false},{"t":"비니·귀마개","done":false},{"t":"핫팩","done":false},{"t":"방수되는 겨울 신발","done":false},{"t":"미끄럼 방지 아이젠·깔창","done":false},{"t":"여분 양말","done":false}]},{"cat":"12/29 촬영","items":[{"t":"촬영 의상","done":false},{"t":"헤어·메이크업 도구","done":false},{"t":"액세서리","done":false},{"t":"촬영용 신발","done":false}]},{"cat":"세면·건강","items":[{"t":"보습크림·핸드크림","done":false},{"t":"립밤","done":false},{"t":"상비약 (감기약·진통제·소화제)","done":false},{"t":"렌즈·안경","done":false},{"t":"세면도구","done":false}]},{"cat":"쇼핑·기타","items":[{"t":"접이식 에코백","done":false},{"t":"여분 가방·접이식 캐리어","done":false},{"t":"지퍼백","done":false},{"t":"볼펜 (입국 서류용)","done":false}]}]}</script>
 <script id="app">(function(){
 // ---- canonical source captured before anything renders ----
 const SRC={
@@ -321,19 +341,29 @@ const infoHtml=i=>{if(!i)return"";let r="";
   if(i.w)r+=`<div class="row"><span class="warnline">주의</span><span class="warnline">${esc(i.w)}</span></div>`;
   return r?`<div class="info">${r}</div>`:""};
 
+const DEFAULT_PACKING=[
+ {cat:"서류·돈",items:["여권 (만료일 6개월 이상 남았는지)","항공권 e-티켓","호텔 예약 확인 (APA·그랜드 브리센)","조잔케이 송영버스 예약 확인","비에이 투어 예약 확인","Visit Japan Web 입국 QR","엔화 현금","해외결제 카드·트래블카드","여행자 보험"]},
+ {cat:"전자기기",items:["휴대폰·충전기","보조배터리 (기내 반입만 가능)","일본용 멀티어댑터 (A타입 돼지코)","eSIM 또는 포켓와이파이","카메라·메모리카드"]},
+ {cat:"방한",items:["롱패딩·두꺼운 외투","히트텍·내복","장갑 (터치 되는 것)","목도리","비니·귀마개","핫팩","방수되는 겨울 신발","미끄럼 방지 아이젠·깔창","여분 양말"]},
+ {cat:"12/29 촬영",items:["촬영 의상","헤어·메이크업 도구","액세서리","촬영용 신발"]},
+ {cat:"세면·건강",items:["보습크림·핸드크림","립밤","상비약 (감기약·진통제·소화제)","렌즈·안경","세면도구"]},
+ {cat:"쇼핑·기타",items:["접이식 에코백","여분 가방·접이식 캐리어","지퍼백","볼펜 (입국 서류용)"]}
+].map(g=>({cat:g.cat,items:g.items.map(t=>({t,done:false}))}));
+if(!DATA.packing)DATA.packing=JSON.parse(JSON.stringify(DEFAULT_PACKING));
+
 // ---- view state ----
 let current="brief", editing=false, draft=null, canWrite=false, artifactNs=null, VERSION=0;
 const GAS=(window.google&&google.script&&google.script.run)?google.script.run:null;
 const IN_CLAUDE=!!(window.claude&&typeof window.claude.use==="function");
 const LOCAL=!GAS&&!IN_CLAUDE; // plain HTML file or other hosting: save in this browser
 const LS_KEY="sapporo-trip-2026";
-if(LOCAL){try{const v=localStorage.getItem(LS_KEY);if(v){const d=JSON.parse(v);if(d&&d.days&&d.days.length)DATA=d;}}catch(e){}}
+if(LOCAL){try{const v=localStorage.getItem(LS_KEY);if(v){const d=JSON.parse(v);if(d&&d.days&&d.days.length){if(!d.packing)d.packing=DATA.packing;DATA=d;}}}catch(e){}}
 function toast(t){let el=$("toast");if(!el){el=document.createElement("div");el.id="toast";el.className="toast";el.setAttribute("role","status");document.body.appendChild(el);}el.textContent=t;el.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>{el.hidden=true},3500);}
 const $=id=>document.getElementById(id);
 
 function briefHtml(D){
   return `<section class="day brief-card panel" id="brief" aria-labelledby="plan-h">
-  <div class="day-head"><div class="dnum">♢</div><div class="dmeta">OVERVIEW · 12/24 – 1/1</div><h2 id="plan-h">일정 한눈에</h2></div>
+  <div class="day-head"><div class="dnum">♢</div><div class="dmeta">OVERVIEW · 12/24 – 1/1</div><h2 id="plan-h">전체 일정</h2></div>
   <ol class="brief">${D.days.map(d=>`<li><a href="#${d.id}"><span class="bd">${esc(d.m)}/${esc(d.d)} ${esc(d.w)}</span><b>${esc(d.title)}</b><span class="bl">${esc(d.brief)}</span></a></li>`).join("")}</ol>
   <div class="mart"><b>호텔 근처 마트</b><span>세이코마트 타누키코지 6초메점 · 南3条西6丁目3-2 · 핫셰프·베이커리 · 6:00–24:00 · 호텔에서 도보 약 3분</span><span>다이이치 스스키노점 · COCONO SUSUKINO B2F · 10:00–21:00 · 도보 약 10분</span></div>
 </section>`;
@@ -354,8 +384,38 @@ function dayHtml(d,i,D){
   </ol>
   ${d.note?`<div class="note${d.noteWarn?" warn":""}">${esc(d.note)}</div>`:""}
   <div class="stay"><span>${esc(d.stayLabel||"Stay")}</span><b>${esc(d.stay)}</b></div>
-  <div class="daynav"><button type="button" class="prev" data-go="${prev?prev.id:"brief"}">← ${prev?`<small>이전</small>${esc(prev.m)}/${esc(prev.d)} ${esc(prev.title)}`:"<small>처음</small>한눈에"}</button><button type="button" class="next" data-go="${next?next.id:""}" ${next?"":"disabled"}>${next?`<small>다음</small>${esc(next.m)}/${esc(next.d)} ${esc(next.title)}`:""} →</button></div>
+  <div class="daynav"><button type="button" class="prev" data-go="${prev?prev.id:"pack"}">← ${prev?`<small>이전</small>${esc(prev.m)}/${esc(prev.d)} ${esc(prev.title)}`:"<small>이전</small>준비물"}</button><button type="button" class="next" data-go="${next?next.id:""}" ${next?"":"disabled"}>${next?`<small>다음</small>${esc(next.m)}/${esc(next.d)} ${esc(next.title)}`:""} →</button></div>
 </section>`;
+}
+
+function packCount(D){let n=0,d=0;(D.packing||[]).forEach(g=>g.items.forEach(it=>{n++;if(it.done)d++}));return [d,n];}
+function packHtml(D){
+  const [d,n]=packCount(D);
+  return `<section class="day panel pack-card" id="pack" aria-labelledby="pack-h" hidden>
+  <div class="day-head"><div class="dnum">✓</div><div class="dmeta">PACKING · <span id="pack-count">${d} / ${n} 챙김</span></div><h2 id="pack-h">준비물</h2></div>
+  <div class="pack-bar"><i id="pack-fill" style="width:${n?Math.round(d/n*100):0}%"></i></div>
+  ${(D.packing||[]).map((g,gi)=>`<div class="pack-group"><h3>${esc(g.cat)}</h3><ul class="pack-list">${g.items.map((it,ii)=>`<li><label class="pk${it.done?" done":""}"><input type="checkbox" id="pk-${gi}-${ii}" data-g="${gi}" data-i="${ii}"${it.done?" checked":""}><span>${esc(it.t)}</span></label></li>`).join("")}</ul></div>`).join("")}
+  <div class="daynav"><button type="button" class="prev" data-go="brief">← <small>이전</small>전체</button><button type="button" class="next" data-go="${D.days[0].id}"><small>다음</small>${esc(D.days[0].m)}/${esc(D.days[0].d)} ${esc(D.days[0].title)} →</button></div>
+</section>`;
+}
+function packEditorHtml(D){
+  return `<section class="day panel pack-card editing" id="pack" aria-labelledby="pack-h" hidden>
+  <div class="day-head"><div class="dnum">✓</div><div class="dmeta">PACKING · 편집 중</div><h2 id="pack-h">준비물</h2></div>
+  ${(D.packing||[]).map((g,gi)=>`<div class="pack-group ed-pg" data-gi="${gi}">
+    <label>분류 이름<input id="pe-${gi}-cat" data-pc="cat" value="${esc(g.cat)}"></label>
+    <ul class="pack-list">${g.items.map((it,ii)=>`<li class="pe-item" data-ii="${ii}"><input id="pe-${gi}-${ii}" data-pi value="${esc(it.t)}" aria-label="준비물 이름"><button type="button" data-act="pdel" class="mini danger" aria-label="삭제">✕</button></li>`).join("")}</ul>
+    <div class="ed-actions"><button type="button" data-act="padd">+ 항목 추가</button><button type="button" data-act="pgdel" class="danger">분류 삭제</button></div>
+  </div>`).join("")}
+  <div class="ed-add"><button type="button" data-act="pgadd">+ 분류 추가</button></div>
+</section>`;
+}
+function readPackEditor(){
+  const sec=$("pack"); if(!sec||!sec.classList.contains("editing"))return;
+  sec.querySelectorAll(".ed-pg").forEach(el=>{const g=draft.packing[+el.dataset.gi];if(!g)return;
+    g.cat=el.querySelector('[data-pc="cat"]').value.trim()||"기타";
+    el.querySelectorAll(".pe-item").forEach(li=>{const it=g.items[+li.dataset.ii];if(it)it.t=li.querySelector("[data-pi]").value.trim();});
+    g.items=g.items.filter(it=>it.t);
+  });
 }
 
 // ---- editor ----
@@ -397,6 +457,7 @@ function editorHtml(d,i){
 </section>`;
 }
 function readEditor(){
+  if(current==="pack"){readPackEditor();return;}
   const d=draft.days.find(x=>x.id===current); if(!d)return;
   const sec=$(d.id); if(!sec||!sec.classList.contains("editing"))return;
   sec.querySelectorAll(".ed-day [data-k]").forEach(el=>{d[el.dataset.k]=el.value.trim()});
@@ -416,8 +477,8 @@ function readEditor(){
 // ---- render ----
 function render(){
   const D=editing?draft:DATA;
-  $("rail").innerHTML=`<a href="#brief" data-id="brief"><b>한눈에</b><span>전체</span></a>`+D.days.map(d=>`<a href="#${d.id}" data-id="${d.id}"><b>${esc(d.m)}/${esc(d.d)}</b><span>${esc(d.w)}</span></a>`).join("");
-  $("days").innerHTML=briefHtml(D)+D.days.map((d,i)=>editing?editorHtml(d,i):dayHtml(d,i,D)).join("");
+  $("rail").innerHTML=`<a href="#brief" data-id="brief"><b>전체</b><span>일정</span></a><a href="#pack" data-id="pack"><b>준비물</b><span id="rail-pack">${packCount(D).join("/")}</span></a>`+D.days.map(d=>`<a href="#${d.id}" data-id="${d.id}"><b>${esc(d.m)}/${esc(d.d)}</b><span>${esc(d.w)}</span></a>`).join("");
+  $("days").innerHTML=briefHtml(D)+(editing?packEditorHtml(D):packHtml(D))+D.days.map((d,i)=>editing?editorHtml(d,i):dayHtml(d,i,D)).join("");
   renderBar(); applyFilter(); show(current,false);
 }
 function renderBar(){
@@ -458,7 +519,7 @@ function show(id,scroll){
   document.querySelectorAll(".panel").forEach(p=>p.hidden=p.id!==id);
   const railBox=$("rail");
   railBox.querySelectorAll("a").forEach(a=>{const y=a.dataset.id===id;a.classList.toggle("on",y);a.setAttribute("aria-current",y?"page":"false");if(y){const l=a.offsetLeft-railBox.clientWidth/2+a.clientWidth/2;railBox.scrollTo({left:l,behavior:"smooth"})}});
-  $("legend").hidden=$("status").hidden=id==="brief"||editing;
+  $("legend").hidden=$("status").hidden=id==="brief"||id==="pack"||editing;
   const msg=$("eb-msg"); if(msg)msg.textContent=id==="brief"?"날짜를 골라 편집하세요":(LOCAL?"편집 중 · 저장하면 이 브라우저에 남아요":"편집 중 · 저장하면 모두에게 반영돼요");
   if(scroll){const rail=document.querySelector(".rail");const top=rail.getBoundingClientRect().top+window.scrollY-1;if(window.scrollY>top)window.scrollTo({top});try{history.replaceState(null,"","#"+id)}catch(e){}}
 }
@@ -467,7 +528,7 @@ document.addEventListener("click",async e=>{
   const id=a?a.getAttribute("href").slice(1):b?b.dataset.go:null;
   if(id&&$(id)&&$(id).classList.contains("panel")){e.preventDefault();show(id,true);return;}
   const t=e.target.closest("button"); if(!t)return;
-  if(t.id==="eb-edit"){editing=true;draft=JSON.parse(JSON.stringify(DATA));if(current==="brief")current=DATA.days[0].id;render();window.scrollTo({top:document.querySelector(".rail").offsetTop});return;}
+  if(t.id==="eb-edit"){editing=true;draft=JSON.parse(JSON.stringify(DATA));if(current==="brief")current="pack";render();window.scrollTo({top:document.querySelector(".rail").offsetTop});return;}
   if(t.id==="eb-download"){
     try{const blob=new Blob([buildDoc(DATA)],{type:"text/html"});const u=URL.createObjectURL(blob);const a=document.createElement("a");a.href=u;a.download="삿포로_신혼여행_일정.html";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("고친 내용이 담긴 파일을 내려받았어요");}catch(e){toast("이 화면에서는 파일로 받을 수 없어요");}
     return;
@@ -476,6 +537,16 @@ document.addEventListener("click",async e=>{
   if(t.id==="eb-save"){readEditor();save(t);return;}
   const act=t.dataset.act; if(!act||!editing)return;
   readEditor();
+  if(current==="pack"){
+    const pg=t.closest(".ed-pg"), gi=pg?+pg.dataset.gi:-1, pi=t.closest(".pe-item");
+    if(act==="padd")draft.packing[gi].items.push({t:"새 준비물",done:false});
+    if(act==="pdel"&&pi)draft.packing[gi].items.splice(+pi.dataset.ii,1);
+    if(act==="pgdel")draft.packing.splice(gi,1);
+    if(act==="pgadd")draft.packing.push({cat:"새 분류",items:[{t:"새 준비물",done:false}]});
+    const y=window.scrollY; render(); window.scrollTo({top:y});
+    if(act==="padd"||act==="pgadd"){const inp=act==="padd"?$("pack").querySelectorAll(".ed-pg")[gi].querySelector(".pe-item:last-child input"):$("pack").querySelector(".ed-pg:last-of-type .pe-item input");if(inp){inp.focus();inp.select();}}
+    return;
+  }
   const d=draft.days.find(x=>x.id===current); if(!d)return;
   const li=t.closest(".ed-stop"), j=li?+li.dataset.j:-1;
   if(act==="add")d.stops.push({t:"",c:"move",n:"새 일정"});
@@ -485,6 +556,30 @@ document.addEventListener("click",async e=>{
   const y=window.scrollY; render(); window.scrollTo({top:y});
   if(act==="add"){const last=$(current).querySelector(".ed-stop:last-child input[data-f='n']");if(last){last.focus();last.select();}}
 });
+// ---- packing checkboxes: save right away ----
+let ckTimer=null, ckBusy=false, ckAgain=false;
+document.addEventListener("change",e=>{
+  const cb=e.target.closest('#pack input[type="checkbox"]'); if(!cb||editing)return;
+  const it=DATA.packing[+cb.dataset.g].items[+cb.dataset.i]; it.done=cb.checked;
+  cb.closest(".pk").classList.toggle("done",cb.checked);
+  const [d,n]=packCount(DATA); $("pack-count").textContent=`${d} / ${n} 챙김`; $("pack-fill").style.width=(n?Math.round(d/n*100):0)+"%"; const rp=$("rail-pack"); if(rp)rp.textContent=`${d}/${n}`;
+  if(!canWrite){toast("보기 전용이라 체크가 저장되지 않아요");return;}
+  clearTimeout(ckTimer); ckTimer=setTimeout(saveChecks, LOCAL?0:1500);
+});
+function saveChecks(){
+  if(LOCAL){try{localStorage.setItem(LS_KEY,JSON.stringify(DATA));}catch(e){}return;}
+  if(GAS){
+    if(ckBusy){ckAgain=true;return;} ckBusy=true;
+    google.script.run.withSuccessHandler(r=>{ckBusy=false;
+      if(r&&r.ok){VERSION=r.version;toast("체크를 저장했어요");}
+      else if(r&&r.conflict){if(r.data){DATA=r.data;if(!DATA.packing)DATA.packing=JSON.parse(JSON.stringify(DEFAULT_PACKING));}VERSION=r.version;render();toast("다른 사람이 먼저 바꿔서 최신 내용으로 다시 열었어요");}
+      if(ckAgain){ckAgain=false;saveChecks();}
+    }).withFailureHandler(()=>{ckBusy=false;toast("체크를 저장하지 못했어요");}).saveTrip(JSON.stringify(DATA),VERSION);
+    return;
+  }
+  if(artifactNs){try{sessionStorage.setItem("sp-tab",current)}catch(e){}artifactNs.publish(buildDoc(DATA)).catch(err=>{const c=err&&err.code;if(c==="not_writer"||c==="not_granted"){canWrite=false;renderBar();toast("보기 전용이라 체크가 저장되지 않아요");}else if(c!=="conflict")toast("체크를 저장하지 못했어요");});}
+}
+
 async function save(btn){
   const msg=$("eb-msg");
   if(LOCAL){
@@ -504,7 +599,7 @@ async function save(btn){
   }
   if(!artifactNs){msg.textContent="여기서는 저장할 수 없어요";return;}
   btn.disabled=true; msg.textContent="저장 중…";
-  try{ await artifactNs.publish(buildDoc(draft)); msg.textContent="저장했어요. 새 버전으로 다시 열려요"; }
+  try{ try{sessionStorage.setItem("sp-tab",current)}catch(e){} await artifactNs.publish(buildDoc(draft)); msg.textContent="저장했어요. 새 버전으로 다시 열려요"; }
   catch(err){
     btn.disabled=false;
     const c=err&&err.code;
@@ -517,7 +612,9 @@ async function save(btn){
 }
 
 render();
-const startId=(location.hash||"#brief").slice(1);
+let startId=(location.hash||"").slice(1);
+if(!startId){try{startId=sessionStorage.getItem("sp-tab")||"";sessionStorage.removeItem("sp-tab")}catch(e){}}
+if(!startId)startId="brief";
 show(startId,false);
 if(startId==="brief")requestAnimationFrame(()=>window.scrollTo(0,0));
 
@@ -526,7 +623,7 @@ if(LOCAL){canWrite=true;renderBar();}
 if(GAS){
   canWrite=true; renderBar();
   google.script.run.withSuccessHandler(r=>{
-    if(r&&r.data&&!editing){DATA=r.data;VERSION=r.version||0;render();}
+    if(r&&r.data&&!editing){const pk=DATA.packing;DATA=r.data;if(!DATA.packing||!DATA.packing.length)DATA.packing=pk;VERSION=r.version||0;render();}
     else if(r)VERSION=r.version||0;
   }).withFailureHandler(()=>{}).getTrip();
 }
