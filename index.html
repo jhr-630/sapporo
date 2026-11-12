@@ -292,6 +292,10 @@ ol.ed-stops{list-style:none;margin:0;padding:12px 22px;display:grid;gap:12px}
 @keyframes flash{0%,60%{background:var(--lamp-soft)}100%{background:transparent}}
 @media (prefers-reduced-motion:reduce){.stop.flash .body{animation:none;background:var(--lamp-soft)}}
 
+.dmap .gbase{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:0;pointer-events:none}
+.dmap.gmode{background:transparent}
+.dmap.gmode .leaflet-pane.leaflet-tile-pane{display:none}
+.dmap.gmode .leaflet-control-attribution{display:none}
 /* mobile polish */
 @media (max-width:520px){
   .hero .wrap{padding-block:22px 18px;gap:10px}
@@ -590,8 +594,35 @@ function initMap(id){
     const touch=matchMedia("(pointer:coarse)").matches;
     const m=L.map(el,{zoomControl:!touch,attributionControl:true,dragging:!touch,scrollWheelZoom:false,tap:false});
     MAPS[id]={m,el};m.attributionControl.setPrefix(false);
-    const tl=L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{maxZoom:19,subdomains:"abcd",attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/" target="_blank" rel="noopener">CARTO</a>'}).addTo(m);
-    let bad=0,good=0;tl.on("tileerror",()=>{bad++;if(!good&&bad>2)el.classList.add("notiles")});tl.on("tileload",()=>{good++;el.classList.remove("notiles")});
+    const TILES=[
+      ["https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}],
+      ["https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; OpenStreetMap'}],
+      ["https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",{maxZoom:18,attribution:'地理院タイル'}]
+    ];
+    let ti=0,tl=null,good=0,bad=0;
+    function nextTiles(){
+      if(tl){m.removeLayer(tl);tl=null}
+      if(ti>=TILES.length){googleBase();return}
+      const [u,o]=TILES[ti++];good=0;bad=0;
+      tl=L.tileLayer(u,o).addTo(m);
+      tl.on("tileload",()=>{good++;el.classList.remove("notiles")});
+      tl.on("tileerror",()=>{bad++;if(!good&&bad>=3)nextTiles()});
+    }
+    function googleBase(){
+      if(el.querySelector(".gbase"))return;
+      if(IN_CLAUDE){el.classList.add("notiles");return;}
+      const c=m.getCenter(), z=Math.round(m.getZoom());
+      m.setView(c,z,{animate:false});
+      const f=document.createElement("iframe");
+      f.className="gbase";f.title="구글 지도";f.loading="lazy";f.referrerPolicy="no-referrer-when-downgrade";
+      f.src=`https://maps.google.com/maps?ll=${c.lat.toFixed(6)},${c.lng.toFixed(6)}&z=${z}&t=m&hl=ko&output=embed`;
+      el.insertBefore(f,el.firstChild);el.classList.add("gmode");
+      m.dragging.disable();m.touchZoom.disable();m.doubleClickZoom.disable();m.boxZoom.disable();if(m.zoomControl)m.zoomControl.remove();
+      const h=el.querySelector(".dmap-hint");if(h)h.remove();
+      let ok=false;f.addEventListener("load",()=>{ok=true});
+      setTimeout(()=>{if(!ok)el.classList.add("notiles")},6000);
+    }
+    nextTiles();
     const pts=dayPts(d), ink=cssVar("--ice");
     const ll=pts.map(x=>x.ll);
     if(ll.length>1)L.polyline(ll,{color:ink,weight:3,opacity:.55,dashArray:"6 6"}).addTo(m);
