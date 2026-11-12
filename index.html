@@ -273,7 +273,7 @@ ol.ed-stops{list-style:none;margin:0;padding:12px 22px;display:grid;gap:12px}
 .dmap.nomap::before{content:"지도를 불러오지 못했어요 · 아래 '구글 지도로 동선'을 눌러 주세요";position:absolute;inset:auto 12px 12px;font-size:12px;color:var(--muted)}
 .dmap .leaflet-container,.dmap.leaflet-container{font:inherit;background:var(--surface-2)}
 .dmap-hint{position:absolute;inset:0;z-index:600;display:flex;align-items:flex-start;justify-content:flex-start;padding:10px;border:0;background:transparent;font:inherit;font-size:12px;color:var(--ink);cursor:pointer}
-.dmap-hint::before{content:"👆 탭하면 지도를 움직일 수 있어요";padding:5px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.dmap-hint::before{content:"탭하면 확대·이동";font-size:11px;padding:3px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .dmap.notiles .dmap-hint::before{display:none}
 .dmap-bar{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;padding:10px 22px;font-size:12.5px;color:var(--muted)}
 .dmap-bar a{display:inline-flex;align-items:center;min-height:36px;padding:6px 14px;border-radius:999px;background:var(--ice);color:var(--surface);font-weight:600;text-decoration:none}
@@ -595,9 +595,8 @@ function initMap(id){
     const m=L.map(el,{zoomControl:!touch,attributionControl:true,dragging:!touch,scrollWheelZoom:false,tap:false});
     MAPS[id]={m,el};m.attributionControl.setPrefix(false);
     const TILES=[
-      ["https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}],
-      ["https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; OpenStreetMap'}],
-      ["https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",{maxZoom:18,attribution:'地理院タイル'}]
+      ["https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}],
+      ["https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",{maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">地理院タイル</a>'}]
     ];
     let ti=0,tl=null,good=0,bad=0;
     function nextTiles(){
